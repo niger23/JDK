@@ -13,6 +13,7 @@ public class SettingWindow extends JFrame {
 
     JButton btnStart;
     private JSlider changeSize, changeSizeWin;
+    private JRadioButton aiMode, humanMode;
 
     SettingWindow(GameWindow gameWindow){
         setTitle("Setting");
@@ -25,7 +26,8 @@ public class SettingWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                gameWindow.startNewGame(0, 3, 3, 3);
+                int mode = humanMode.isSelected() ? 1 : 0;
+                gameWindow.startNewGame(mode, changeSize.getValue(), changeSize.getValue(), changeSizeWin.getValue());
             }
         });
         JPanel settingPanel = new JPanel(new GridLayout(3,1));
@@ -38,8 +40,8 @@ public class SettingWindow extends JFrame {
     private JPanel getModePanel() {
         JPanel getModePanel = new JPanel(new GridLayout(3,1));
         JLabel textTitle = new JLabel("Выберите режим игры: ");
-        JRadioButton humanMode = new JRadioButton("игрок против игрока");
-        JRadioButton aiMode = new JRadioButton("игрок против компьютера");
+        humanMode = new JRadioButton("игрок против игрока");
+        aiMode = new JRadioButton("игрок против компьютера");
         ButtonGroup changeMode = new ButtonGroup();
         aiMode.setSelected(true);
         changeMode.add(humanMode);
