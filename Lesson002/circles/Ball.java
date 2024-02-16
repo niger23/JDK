@@ -1,11 +1,15 @@
-package Lesson002;
+package Lesson002.circles;
+
+import Lesson002.common.MainCanvas;
+import Lesson002.common.Sprite;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.util.Random;
 
-public class Ball extends Sprite{
+public class Ball extends Sprite {
     private static Random rnd = new Random();
-    private Color color;
+    private final Color color;
     private float vX;
     private float vY;
 
@@ -15,6 +19,8 @@ public class Ball extends Sprite{
         color = new Color(rnd.nextInt());
         vX = 100f + (float) (Math.random()*200f);
         vY = 100f + (float) (Math.random()*200f);
+
+
     }
     @Override
     public void render (MainCanvas canvas, Graphics g) {

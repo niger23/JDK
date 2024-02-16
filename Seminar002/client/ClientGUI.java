@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ClientGUI extends JFrame implements View{
+public class ClientGUI extends JFrame implements ClientView {
     public static final int WIDTH = 400;
     public static final int HEIGHT = 300;
 

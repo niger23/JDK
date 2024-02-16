@@ -1,6 +1,10 @@
-package Lesson002;
+package Lesson002.common;
+
+import Lesson002.common.Interactable;
+import Lesson002.common.MainCanvas;
 
 import java.awt.*;
+import java.awt.event.MouseListener;
 
 public abstract class Sprite implements Interactable{
     protected float x;

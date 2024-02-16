@@ -1,12 +1,14 @@
-package Lesson002;
+package Lesson002.common;
+
+import Lesson002.bricks.MainWindow;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MainCanvas extends JPanel {
-    private final MainWindow controller;
+    private final CanvasRepaintListener controller;
     private long lastFrameTime;
-    MainCanvas (MainWindow controller) {
+    public MainCanvas (CanvasRepaintListener controller) {
         this.controller = controller;
         lastFrameTime = System.nanoTime();
     }

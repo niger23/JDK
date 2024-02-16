@@ -3,12 +3,12 @@ package Seminar002.client;
 import Seminar002.server.Server;
 
 public class Client {
-    private View view;
+    private ClientView view;
     private String name;
     private Server server;
     private boolean connected;
 
-    public Client(View view, Server server) {
+    public Client(ClientView view, Server server) {
         this.view = view;
         this.server = server;
     }
@@ -18,7 +18,7 @@ public class Client {
         if (server.connectUser(this)){
             showOnWindow("Вы успешно подключились!\n");
             connected = true;
-            String log = server.getHistory();
+            String log = server.getLog();
             if (log != null){
                 showOnWindow(log);
             }
@@ -45,7 +45,7 @@ public class Client {
     public void sendMessage(String message){
         if (connected) {
             if (!message.isEmpty()) {
-                server.sendMessage(name + ": " + message);
+                server.message(name + ": " + message);
             }
         } else {
             showOnWindow("Нет подключения к серверу");

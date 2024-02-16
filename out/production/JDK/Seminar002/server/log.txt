@@ -4,5 +4,3 @@ Bill: bill
 Kill: kill
 Gell: Первый нах
 July: Второй
-Frank: пр
-Test: пф
