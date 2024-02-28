@@ -2,43 +2,45 @@ package HomeWork003;
 
 public class Calc {
 
-    public static <T extends Number> T sum(T num1, T num2) {
+    public static <T extends Number> double sum(T num1, T num2) {
         if (num1 instanceof Integer && num2 instanceof Integer) {
-            return (T) Integer.valueOf(num1.intValue() + num2.intValue());
+            return Integer.valueOf(num1.intValue() + num2.intValue());
         } else if (num1 instanceof Double || num2 instanceof Double) {
-            return (T) Double.valueOf(num1.doubleValue() + num2.doubleValue());
+            return Double.valueOf(num1.doubleValue() + num2.doubleValue());
         } else {
             throw new IllegalArgumentException("Данный тип не поддерживается");
         }
     }
 
-    public static <T extends Number> T multiply(T num1, T num2) {
+    public static <T extends Number> double multiply(T num1, T num2) {
         if (num1 instanceof Integer && num2 instanceof Integer) {
-            return (T) Integer.valueOf(num1.intValue() * num2.intValue());
+            return Integer.valueOf(num1.intValue() * num2.intValue());
         } else if (num1 instanceof Double || num2 instanceof Double) {
-            return (T) Double.valueOf(num1.doubleValue() * num2.doubleValue());
+            return Double.valueOf(num1.doubleValue() * num2.doubleValue());
         } else {
             throw new IllegalArgumentException("Данный тип не поддерживается");
         }
     }
 
-    public static <T extends Number> T divide(T num1, T num2) {
+    public static <T extends Number> double divide(T num1, T num2) {
         if (num2.doubleValue() != 0) {
             if (num1 instanceof Integer && num2 instanceof Integer) {
-                return (T) Double.valueOf(num1.intValue() / num2.intValue());
+                return Double.valueOf(num1.intValue() / num2.intValue());
             } else if (num1 instanceof Double || num2 instanceof Double) {
-                return (T) Double.valueOf(num1.doubleValue() / num2.doubleValue());
+                return Double.valueOf(num1.doubleValue() / num2.doubleValue());
             } else {
                 throw new IllegalArgumentException("Данный тип не поддерживается");
             }
-        } else return null;
+        } else {
+            throw new IllegalArgumentException("Деление на ноль недопустимо");
+        }
     }
 
-    public static <T extends Number> T subtract(T num1, T num2) {
+    public static <T extends Number> double subtract(T num1, T num2) {
         if (num1 instanceof Integer && num2 instanceof Integer) {
-            return (T) Integer.valueOf(num1.intValue() - num2.intValue());
+            return Integer.valueOf(num1.intValue() - num2.intValue());
         } else if (num1 instanceof Double || num2 instanceof Double) {
-            return (T) Double.valueOf(num1.doubleValue() - num2.doubleValue());
+            return Double.valueOf(num1.doubleValue() - num2.doubleValue());
         } else {
             throw new IllegalArgumentException("Данный тип не поддерживается");
         }
