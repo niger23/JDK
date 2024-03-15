@@ -5,7 +5,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class Main {
+public class Main1 {
     public void PrintFile () throws IOException {
         InputStream is = getClass().getResourceAsStream("hello.txt");
 
@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        new Main().PrintFile();
+        new Main1().PrintFile();
 
     }
 }
